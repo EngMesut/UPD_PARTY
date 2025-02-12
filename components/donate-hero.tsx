@@ -1,11 +1,17 @@
-import Image from "next/image"
+import Image from "next/image";
 
 export default function DonateHero() {
   return (
     <div className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <Image src="/images/hero/donate-hero.jpg" alt="Donate to our campaign" fill className="object-cover" priority />
+        <Image
+          src="/HSMPIC2.jpg"
+          alt="Donate to our campaign"
+          fill
+          className="object-cover"
+          priority
+        />
         <div className="absolute inset-0 bg-primary mix-blend-multiply" />
       </div>
 
@@ -35,9 +41,10 @@ export default function DonateHero() {
       {/* Content */}
       <div className="relative z-10 text-center space-y-6">
         <h1 className="text-8xl font-bold text-white tracking-tight">DONATE</h1>
-        <h2 className="text-4xl font-bold text-white tracking-wider">POWER THE RENEWAL</h2>
+        <h2 className="text-4xl font-bold text-white tracking-wider">
+          POWER THE RENEWAL
+        </h2>
       </div>
     </div>
-  )
+  );
 }
-

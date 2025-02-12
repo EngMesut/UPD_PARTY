@@ -1,7 +1,7 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Facebook, Instagram, Twitter, Linkedin, Youtube } from "lucide-react"
-import SignUpBanner from "./sign-up-banner"
+import Image from "next/image";
+import Link from "next/link";
+import { Facebook, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
+import SignUpBanner from "./sign-up-banner";
 
 const mainNavLinks = [
   { name: "Conference", href: "/conference" },
@@ -11,7 +11,7 @@ const mainNavLinks = [
   { name: "Sign Up", href: "/sign-up" },
   { name: "Candidates", href: "/candidates" },
   { name: "Donate", href: "/donate" },
-]
+];
 
 const footerColumns = [
   {
@@ -50,7 +50,7 @@ const footerColumns = [
       { name: "Old Site", href: "/old-site" },
     ],
   },
-]
+];
 
 const socialLinks = [
   { name: "Facebook", icon: Facebook, href: "https://facebook.com" },
@@ -58,7 +58,7 @@ const socialLinks = [
   { name: "Twitter", icon: Twitter, href: "https://twitter.com" },
   { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
   { name: "YouTube", icon: Youtube, href: "https://youtube.com" },
-]
+];
 
 export default function Footer() {
   return (
@@ -95,7 +95,10 @@ export default function Footer() {
           <ul className="flex flex-wrap justify-center gap-6">
             {mainNavLinks.map((link) => (
               <li key={link.name}>
-                <Link href={link.href} className="hover:text-secondary transition-colors">
+                <Link
+                  href={link.href}
+                  className="hover:text-secondary transition-colors"
+                >
                   {link.name}
                 </Link>
               </li>
@@ -108,7 +111,10 @@ export default function Footer() {
             <ul key={columnIndex} className="space-y-2">
               {column.links.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm hover:text-secondary transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-sm hover:text-secondary transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -119,10 +125,9 @@ export default function Footer() {
 
         <div className="text-center text-sm space-y-2">
           <p>© 2025 The Party.</p>
-          <p>Promoted by Party Name at 123 Party Street, City, ABC 123.</p>
+          <p>Promoted by Party UPD at 123 Party Street, City, ABC 123.</p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
-

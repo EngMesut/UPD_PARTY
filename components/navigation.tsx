@@ -1,68 +1,85 @@
 "use client";
-
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const router = useRouter();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const handleNavigation = (path: string) => {
+    router.push(path);
+  };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        isScrolled ? "bg-primary/90 text-backdrop-blur-sm" : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-4 flex items-center justify-between h-16">
-        {/* Logo on the left */}
-        <Link href="/">
-          <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/UPD-LOGO.jpg-NTcieqWTeByAfsGeFnFFxWNJvDAVrJ.jpeg"
-            alt="Party Logo"
-            width={40}
-            height={40}
-            className="h-10 w-auto"
-          />
-        </Link>
+    <div>
+      {/* Navigation */}
+      <nav className="bg-white py-4 px-4 shadow-sm">
+        <div className="container mx-auto flex items-center justify-between">
+          <button
+            onClick={() => handleNavigation("/")}
+            className="flex items-center space-x-2"
+          >
+            <div className="w-8 h-8">
+              <Image
+                src="/updLogo.jpg"
+                alt="Zaitical Logo"
+                width={45}
+                height={45}
+                className="object-contain"
+              />
+            </div>
+            <span className="text-2xl font-bold text-[#2E8B57]">
+              Union Peace&Dev
+            </span>
+          </button>
 
-        {/* Navigation links and button on the right */}
-        <div className="flex items-center space-x-8">
-          <Link
-            href="/volunteer"
-            className="text-white hover:text-secondary transition-colors"
-          >
-            VOLUNTEER
-          </Link>
-          <Link
-            href="/donate"
-            className="text-white hover:text-secondary transition-colors"
-          >
-            DONATE
-          </Link>
-          <Link
-            href="/shop"
-            className="text-white hover:text-secondary transition-colors"
-          >
-            SHOP
-          </Link>
-          <Button
-            variant="outline"
-            className="border-white text-green-600 hover:bg-white hover:text-primary"
-          >
-            JOIN
-          </Button>
+          <div className="flex items-center space-x-8">
+            <button
+              onClick={() => handleNavigation("/volunteer")}
+              className="text-[#2E8B57] hover:text-secondary transition-colors"
+            >
+              VOLUNTEER
+            </button>
+            <button
+              onClick={() => handleNavigation("/volunteer")}
+              className="text-[#2E8B57] hover:text-secondary transition-colors"
+            >
+              CAMPAIGN
+            </button>
+            <button
+              onClick={() => handleNavigation("/donate")}
+              className="text-[#2E8B57] hover:text-secondary transition-colors"
+            >
+              DONATE
+            </button>
+            <button
+              onClick={() => handleNavigation("/shop")}
+              className="text-[#2E8B57] hover:text-secondary transition-colors"
+            >
+              SHOP
+            </button>
+            <div className="flex items-center space-x-4">
+              {" "}
+              {/* <div className="relative">
+                {" "}
+                <ShoppingCart className="h-6 w-6 text-[#2E8B57]" />{" "}
+                <span className="absolute -top-2 -right-2 bg-[#2E8B57] text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                  {" "}
+                  0{" "}
+                </span>{" "}
+              </div>{" "} */}
+              <Button
+                onClick={() => handleNavigation("/volunteer")}
+                className="bg-white text-[#2E8B57] border-2 border-[#2E8B57] hover:bg-[#2E8B57] hover:text-white transition-colors"
+              >
+                {" "}
+                Donate Now →{" "}
+              </Button>{" "}
+            </div>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }
