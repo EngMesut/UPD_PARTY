@@ -107,7 +107,7 @@ export default function Navigation() {
             SHOP
           </button>
           <Button
-            onClick={() => handleNavigation("/volunteer")}
+            onClick={() => handleNavigation("//donate")}
             className="w-full bg-white text-[#2E8B57] border-2 border-[#2E8B57] hover:bg-[#2E8B57] hover:text-white transition-colors"
           >
             Donate Now →
