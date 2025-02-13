@@ -89,7 +89,7 @@ export default function Navigation() {
             VOLUNTEER
           </button>
           <button
-            onClick={() => handleNavigation("/Campaign")}
+            onClick={() => handleNavigation("/campaign")}
             className="block w-full text-left px-4 py-2 text-[#2E8B57] hover:bg-[#2E8B57] hover:text-white transition-colors"
           >
             CAMPAIGN
