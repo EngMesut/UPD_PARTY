@@ -43,7 +43,7 @@ export default function Navigation() {
             VOLUNTEER
           </button>
           <button
-            onClick={() => handleNavigation("/volunteer")}
+            onClick={() => handleNavigation("/campaign")}
             className="text-[#2E8B57] hover:text-secondary transition-colors"
           >
             CAMPAIGN
@@ -89,7 +89,7 @@ export default function Navigation() {
             VOLUNTEER
           </button>
           <button
-            onClick={() => handleNavigation("/volunteer")}
+            onClick={() => handleNavigation("/Campaign")}
             className="block w-full text-left px-4 py-2 text-[#2E8B57] hover:bg-[#2E8B57] hover:text-white transition-colors"
           >
             CAMPAIGN
