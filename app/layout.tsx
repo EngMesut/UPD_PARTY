@@ -1,9 +1,10 @@
+import type { Metadata, Viewport } from "next";
+import type React from "react"; // Import React
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import TopBar from "@/components/top-bar";
-import type React from "react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,14 +12,18 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Union Peace & Development Party",
   description: "Official website of the Union Peace & Development Party",
   generator: "v0.dev",
-  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: "/favicon.ico",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
