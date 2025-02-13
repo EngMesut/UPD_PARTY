@@ -10,7 +10,6 @@ export default function Home() {
     <main className="min-h-screen">
       <HeroSection />
       <CampaignPage />
-
       <LatestNews />
       <ActionCards />
       <JoinSection />

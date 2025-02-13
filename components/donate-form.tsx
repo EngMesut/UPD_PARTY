@@ -1,13 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import Link from "next/link"
-import { Lock } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import Link from "next/link";
+import { Lock } from "lucide-react";
 
 const donationAmounts = [
   { value: 5, label: "$5" },
@@ -15,30 +21,32 @@ const donationAmounts = [
   { value: 25, label: "$25" },
   { value: 50, label: "$50" },
   { value: 100, label: "$100" },
-]
+];
 
 const frequencies = [
   { value: "weekly", label: "Weekly" },
   { value: "monthly", label: "Monthly" },
   { value: "quarterly", label: "Quarterly" },
   { value: "annually", label: "Annually" },
-]
+];
 
 export default function DonateForm() {
-  const [donationType, setDonationType] = useState<"one-time" | "recurring">("one-time")
-  const [selectedAmount, setSelectedAmount] = useState<number | "other">(50)
-  const [customAmount, setCustomAmount] = useState("")
-  const [emailUpdates, setEmailUpdates] = useState(true)
-  const [frequency, setFrequency] = useState("weekly")
-  const [nextPaymentDate, setNextPaymentDate] = useState("")
+  const [donationType, setDonationType] = useState<"one-time" | "recurring">(
+    "one-time"
+  );
+  const [selectedAmount, setSelectedAmount] = useState<number | "other">(50);
+  const [customAmount, setCustomAmount] = useState("");
+  const [emailUpdates, setEmailUpdates] = useState(true);
+  const [frequency, setFrequency] = useState("weekly");
+  const [nextPaymentDate, setNextPaymentDate] = useState("");
 
   // Calculate next payment date when component mounts
-  const today = new Date()
+  const today = new Date();
   const formattedDate = today.toLocaleDateString("en-US", {
     month: "2-digit",
     day: "2-digit",
     year: "numeric",
-  })
+  });
 
   return (
     <div className="bg-white rounded-lg shadow-md p-8">
@@ -48,7 +56,10 @@ export default function DonateForm() {
           <h2 className="text-2xl font-bold mb-2">Donate any amount</h2>
           <p className="mb-4">
             Or find out about our{" "}
-            <Link href="/donor-clubs" className="text-secondary hover:underline">
+            <Link
+              href="/donor-clubs"
+              className="text-secondary hover:underline"
+            >
               Donor Clubs
             </Link>
             .
@@ -100,7 +111,8 @@ export default function DonateForm() {
               />
               <p className="text-sm text-gray-500">Use the format MM/DD/YYYY</p>
               <p className="text-sm text-gray-500">
-                Your first gift processes today. The next gift processes on {formattedDate}.
+                Your first gift processes today. The next gift processes on{" "}
+                {formattedDate}.
               </p>
             </div>
           </div>
@@ -131,7 +143,9 @@ export default function DonateForm() {
           <div className="space-y-2">
             <Label htmlFor="customAmount">Enter amount</Label>
             <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2">$</span>
+              <span className="absolute left-3 top-1/2 -translate-y-1/2">
+                $
+              </span>
               <Input
                 id="customAmount"
                 type="number"
@@ -165,7 +179,11 @@ export default function DonateForm() {
 
           <div className="space-y-2">
             <Label htmlFor="country">Country</Label>
-            <select id="country" className="w-full h-10 px-3 border rounded-md" defaultValue="US">
+            <select
+              id="country"
+              className="w-full h-10 px-3 border rounded-md"
+              defaultValue="US"
+            >
               <option value="US">🇺🇸 United States</option>
               {/* Add other countries as needed */}
             </select>
@@ -190,16 +208,25 @@ export default function DonateForm() {
 
         {/* Email Updates */}
         <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Would you like to hear from us?</h3>
+          <h3 className="text-lg font-semibold">
+            Would you like to hear from us?
+          </h3>
           <p className="text-sm text-gray-600">
-            We'd like to keep you updated on our campaigns, policies, appeals and opportunities to get involved - in
-            addition to contact regarding donations. You can unsubscribe at any time.
+            We'd like to keep you updated on our campaigns, policies, appeals
+            and opportunities to get involved - in addition to contact regarding
+            donations. You can unsubscribe at any time.
           </p>
           <div className="flex gap-4">
-            <Button variant={emailUpdates ? "default" : "outline"} onClick={() => setEmailUpdates(true)}>
+            <Button
+              variant={emailUpdates ? "default" : "outline"}
+              onClick={() => setEmailUpdates(true)}
+            >
               Yes
             </Button>
-            <Button variant={!emailUpdates ? "default" : "outline"} onClick={() => setEmailUpdates(false)}>
+            <Button
+              variant={!emailUpdates ? "default" : "outline"}
+              onClick={() => setEmailUpdates(false)}
+            >
               No
             </Button>
           </div>
@@ -208,7 +235,10 @@ export default function DonateForm() {
         {/* Privacy Policy */}
         <p className="text-sm text-gray-600">
           To learn how we collect and use your information, please read our{" "}
-          <Link href="/privacy-policy" className="text-secondary hover:underline">
+          <Link
+            href="/privacy-policy"
+            className="text-secondary hover:underline"
+          >
             privacy policy
           </Link>
           .
@@ -224,6 +254,5 @@ export default function DonateForm() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

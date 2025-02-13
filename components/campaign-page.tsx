@@ -1,8 +1,8 @@
-"use client"; // Add this line to mark the component as a Client Component
+"use client";
 
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation"; // Correct for Next.js 13 App Router
+import { useRouter } from "next/navigation";
 
 export default function CampaignPage() {
   const router = useRouter();
@@ -42,7 +42,7 @@ export default function CampaignPage() {
             variant="secondary"
             size="lg"
             className="bg-white hover:bg-gray-100 text-primary border-0 rounded-md w-fit font-semibold"
-            onClick={() => handleNavigation("/learn-more")} // Example path
+            onClick={() => handleNavigation("/learn-more")}
           >
             Learn More
             <ArrowRight className="ml-2 h-4 w-4" />
@@ -75,14 +75,14 @@ export default function CampaignPage() {
                 key={index}
                 variant="secondary"
                 className="bg-white hover:bg-gray-100 text-primary font-semibold text-lg h-16 rounded-md"
-                onClick={() => handleNavigation("/donate")} // Example path
+                onClick={() => handleNavigation("/donate")}
               >
                 {amount}
               </Button>
             ))}
           </div>
           <Button
-            onClick={() => handleNavigation("/donate")} // Updated path for donation
+            onClick={() => handleNavigation("/donate")}
             size="lg"
             className="bg-white/10 hover:bg-white/20 text-white border-2 border-white/20 rounded-md w-fit"
           >

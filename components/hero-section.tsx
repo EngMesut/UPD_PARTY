@@ -1,16 +1,22 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   return (
-    <div
-      className="relative overflow-hidden bg-center bg-no-repeat min-h-screen w-full flex items-center"
-      style={{
-        backgroundImage: "url('/HSM2.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="container min-h-screen flex items-center py-24 bg-gradient-to-br from-primary/65 to-secondary/65">
+    <div className="relative min-h-screen w-full flex items-center overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/HSM2.jpg"
+          alt="Hero background"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/65 to-secondary/65" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4 py-24">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6 animate-fade-in-up text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight">

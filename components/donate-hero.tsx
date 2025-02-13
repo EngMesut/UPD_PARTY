@@ -6,13 +6,13 @@ export default function DonateHero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/HSMPIC2.jpg"
-          alt="Donate to our campaign"
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/HSMPIC2.jpg-I6bcUT0mr2XOPWvoiEKM4kv8s6zNlm.jpeg"
+          alt="Support our campaign"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           priority
         />
-        <div className="absolute inset-0 bg-primary mix-blend-multiply" />
+        <div className="absolute inset-0 bg-primary/60 mix-blend-multiply" />
       </div>
 
       {/* Decorative Lines */}
@@ -40,8 +40,10 @@ export default function DonateHero() {
 
       {/* Content */}
       <div className="relative z-10 text-center space-y-6">
-        <h1 className="text-8xl font-bold text-white tracking-tight">DONATE</h1>
-        <h2 className="text-4xl font-bold text-white tracking-wider">
+        <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight">
+          DONATE
+        </h1>
+        <h2 className="text-2xl md:text-4xl font-bold text-white tracking-wider">
           POWER THE RENEWAL
         </h2>
       </div>
